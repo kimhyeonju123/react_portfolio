@@ -1,0 +1,1419 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@600&family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Diphylleia&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  width: 100%;
+  position: relative;
+  background-color: #f1f0e8;
+  border-bottom: 1px solid black;
+  margin-top: -1px;
+}
+#header .inner {
+  width: 1180px;
+  margin: 0 auto;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .inner > h1 a {
+  font: bold 40px/1 "Playfair Display";
+  color: #222;
+}
+#header .inner .menu #gnb {
+  display: flex;
+  gap: 30px;
+}
+#header .inner .menu #gnb li {
+  width: 100%;
+  height: 100%;
+}
+#header .inner .menu #gnb li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  font: bold 20px/50px "IBM Plex Sans KR";
+  transition: 0.2s;
+  position: relative;
+}
+#header .inner .menu #gnb li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #333;
+}
+#header .inner .menu #gnb li a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #333;
+}
+#header .inner .menu #gnb li a:hover {
+  color: #606c5d;
+}
+#header .inner .menu #gnb li a:hover::after {
+  width: 100%;
+  left: 0;
+  top: 5px;
+  transition: top 0.3s;
+}
+#header .inner .menu #gnb li a:hover::before {
+  width: 100%;
+  left: 0;
+  bottom: 5px;
+  transition: bottom 0.3s;
+}
+#header .inner .menuOn {
+  width: 200px;
+  height: 100vh;
+  background: #e1e1e1;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  padding: 30px 10px;
+  z-index: 10;
+  transition: 0.5s;
+}
+#header .inner .menuOn.on {
+  left: 0;
+}
+#header .inner .menuOn > h1 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #666;
+}
+#header .inner .menuOn > h1 a {
+  display: block;
+  font: bold 25px/1 "Playfair Display";
+  color: #606c5d;
+  text-align: center;
+}
+#header .inner .menuOn #gnbOn li > a {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  font: bold 14px/1 "IBM Plex Sans KR";
+  color: #606c5d;
+  text-align: center;
+}
+#header .inner .menuOn #gnbOn li:last-child {
+  position: absolute;
+  bottom: 25vh;
+  width: 90%;
+  height: 40px;
+  padding: 0;
+}
+#header .inner .menuOn #gnbOn li:last-child > a {
+  padding: 0;
+  line-height: 40px;
+  border: 1px solid black;
+}
+#header .inner > a {
+  position: fixed;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 50%;
+  right: 2vw;
+  bottom: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .inner > a .upi {
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+}
+#header .inner .ham_btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#header .inner .ham_btn > .hamBtni {
+  font-size: 30px;
+}
+#header .inner .x_btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#header .inner .x_btn > .xBtni {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 290px) {
+  #header {
+    width: 100%;
+  }
+  #header .inner {
+    width: 100%;
+  }
+  #header .inner > h1 {
+    transform: translateX(10px);
+  }
+  #header .inner > h1 a {
+    font-size: 20px;
+  }
+  #header .inner > a {
+    display: none;
+  }
+  #header .inner .menu #gnb {
+    display: none;
+  }
+  #header .inner > a {
+    position: none;
+  }
+  #header .inner .ham_btn {
+    right: 10px;
+    display: flex;
+  }
+  #header .inner .ham_btn.del {
+    display: none;
+  }
+  #header .inner .x_btn {
+    right: 10px;
+    display: none;
+  }
+  #header .inner .x_btn.on {
+    display: flex;
+  }
+}
+#banner {
+  width: 100%;
+  height: 1000px;
+  background-color: #f1f0e8;
+  overflow: hidden;
+}
+#banner .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#banner .inner .panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#banner .inner .panel li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.5s;
+}
+#banner .inner .panel li.on {
+  opacity: 1;
+  z-index: 2;
+}
+#banner .inner .panel #bwBanner {
+  width: 100%;
+  height: 100%;
+}
+#banner .inner .panel #bwBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(-20%);
+}
+#banner .inner .panel #bwBanner p {
+  font: bold 50px/1.5 "IBM Plex Sans KR";
+  letter-spacing: 4px;
+  position: absolute;
+  top: 10%;
+  right: 19%;
+  text-align: right;
+  color: #000;
+}
+#banner .inner .panel #cyBanner {
+  width: 100%;
+  height: 100%;
+}
+#banner .inner .panel #cyBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(-20%);
+}
+#banner .inner .panel #cyBanner p {
+  font: bold 50px/1.5 "IBM Plex Sans KR";
+  letter-spacing: 4px;
+  position: absolute;
+  top: 10%;
+  right: 19%;
+  text-align: right;
+  color: #000;
+}
+#banner .inner .panel #jbBanner {
+  width: 100%;
+  height: 100%;
+}
+#banner .inner .panel #jbBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(-20%);
+}
+#banner .inner .panel #jbBanner p {
+  font: bold 50px/1.5 "IBM Plex Sans KR";
+  letter-spacing: 4px;
+  position: absolute;
+  top: 10%;
+  right: 19%;
+  text-align: right;
+  color: #000;
+}
+
+#sub_banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#sub_banner .inner {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  perspective: 4000px;
+}
+#sub_banner .inner .bar {
+  width: 10vw;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 10px 0px 2px rgba(0, 0, 0, 0.4);
+  z-index: -3;
+}
+#sub_banner .inner .page {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #f1f0e8;
+  z-index: 0;
+  transform-origin: left center;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+}
+#sub_banner .inner .page .txt {
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner .page .txt .info {
+  font: 12px/1 "arial";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #aaa;
+}
+#sub_banner .inner .page h2 {
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner .page span {
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner .page p {
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner .page .pic {
+  opacity: 1;
+}
+#sub_banner .inner .page .pic img {
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner .page .story {
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner .page.on {
+  transform: rotateY(-180deg);
+}
+#sub_banner .inner .page.on .txt {
+  transition: 0.5s;
+  opacity: 0;
+}
+#sub_banner .inner .page.on h2 {
+  transition: 0.5s;
+  opacity: 0;
+}
+#sub_banner .inner .page.on span {
+  transition: 0.5s;
+  opacity: 0;
+}
+#sub_banner .inner .page.on p {
+  transition: 0.5s;
+  opacity: 0;
+}
+#sub_banner .inner .page.on .pic {
+  opacity: 0;
+}
+#sub_banner .inner .page.on .pic img {
+  opacity: 0;
+  transition: 0.5s;
+}
+#sub_banner .inner .page.on .story {
+  transition: 0.5s;
+  opacity: 0;
+}
+#sub_banner .inner .page.on article {
+  visibility: hidden;
+  transition: 0.5s;
+}
+#sub_banner .inner #page1 {
+  z-index: 1;
+  box-shadow: 10px 0px 2px rgba(0, 0, 0, 0.4), -2px 0 2px rgba(0, 0, 0, 0.4);
+  background-color: #5f7161;
+}
+#sub_banner .inner #page1 h2 {
+  font: bold 3vw/1 "Diphylleia";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2%;
+}
+#sub_banner .inner #page1 span {
+  display: block;
+  padding: 0 20%;
+  margin-top: 3%;
+  text-align: center;
+  color: #bbb;
+  font: 1vw/1.2 "Diphylleia";
+}
+#sub_banner .inner #page1 .pic {
+  margin-top: 4vw;
+  margin-left: 7vw;
+  margin-bottom: 2%;
+  opacity: 1;
+  width: 25vw;
+  height: auto;
+}
+#sub_banner .inner #page1 .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#sub_banner .inner #page2 {
+  z-index: 0;
+  box-shadow: 15px 0px 2px rgba(0, 0, 0, 0.4), -2px 0 2px rgba(0, 0, 0, 0.4);
+  padding: 1vh 2vw;
+}
+#sub_banner .inner #page2 span {
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #777;
+  font: 24px/1.2 "Diphylleia";
+  margin-top: 2%;
+}
+#sub_banner .inner #page2 .txt {
+  position: absolute;
+  width: 20vw;
+  height: 40vh;
+  background-color: #fff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.4);
+  top: 10%;
+  right: 5%;
+  border-radius: 10px;
+  padding: 2vh 1vw;
+}
+#sub_banner .inner #page2 .txt h2 {
+  font: bold 30px/1.2 "Diphylleia";
+  border-bottom: 1px dashed #000;
+  margin-bottom: 15%;
+  padding-bottom: 10px;
+}
+#sub_banner .inner #page2 .txt p {
+  font: 18px/1.2 "Diphylleia";
+  margin-bottom: 3%;
+}
+#sub_banner .inner #page2 .pic {
+  position: absolute;
+  top: 10%;
+  opacity: 1;
+  width: 15vw;
+  height: 40vh;
+  border-radius: 10px;
+}
+#sub_banner .inner #page2 .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#sub_banner .inner #page2 .story {
+  position: absolute;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.04);
+  top: 65%;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub_banner .inner #page2 .story p {
+  padding: 2%;
+  font: 18px/1.5 "Diphylleia";
+}
+#sub_banner .inner #page3 {
+  z-index: -1;
+  box-shadow: 20px 0px 2px rgba(0, 0, 0, 0.4), -2px 0 2px rgba(0, 0, 0, 0.4);
+  padding: 1vh 2vw;
+}
+#sub_banner .inner #page3 span {
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #777;
+  font: 24px/1.2 "Diphylleia";
+  margin-top: 2%;
+}
+#sub_banner .inner #page3 .txt {
+  position: absolute;
+  width: 20vw;
+  height: 40vh;
+  background-color: #fff;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.4);
+  top: 10%;
+  right: 5%;
+  border-radius: 10px;
+  padding: 2vh 1vw;
+}
+#sub_banner .inner #page3 .txt h2 {
+  font: bold 30px/1.2 "Diphylleia";
+  border-bottom: 1px dashed #000;
+  margin-bottom: 15%;
+  padding-bottom: 10px;
+}
+#sub_banner .inner #page3 .txt p {
+  font: 18px/1.2 "Diphylleia";
+  margin-bottom: 3%;
+}
+#sub_banner .inner #page3 .pic {
+  position: absolute;
+  top: 10%;
+  opacity: 1;
+  width: 15vw;
+  height: 40vh;
+  border-radius: 10px;
+}
+#sub_banner .inner #page3 .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#sub_banner .inner #page3 .story {
+  position: absolute;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.04);
+  top: 65%;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub_banner .inner #page3 .story p {
+  padding: 2%;
+  font: 18px/1.5 "Diphylleia";
+}
+#sub_banner .inner #page4 {
+  background-color: #5f7161;
+  z-index: -2;
+  box-shadow: 25px 0px 2px rgba(0, 0, 0, 0.4), -2px 0 2px rgba(0, 0, 0, 0.4);
+  padding: 1vh 2vw;
+}
+#sub_banner .inner #page4 > h2 {
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: black;
+  font: bold 24px/1.2 "Diphylleia";
+  margin-top: 2%;
+}
+#sub_banner .inner #page4 .inner .vidList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+#sub_banner .inner #page4 .inner .vidList article {
+  width: 15vw;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.09);
+  margin-bottom: 20px;
+}
+#sub_banner .inner #page4 .inner .vidList article .pic {
+  display: block;
+  width: 100%;
+  height: 30%;
+  padding: 10px;
+  opacity: 1;
+  transition: 1s 0.6s;
+}
+#sub_banner .inner #page4 .inner .vidList article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#sub_banner .inner #page4 .inner .vidList article .con {
+  width: 100%;
+  height: 40%;
+  padding: 10px;
+}
+#sub_banner .inner #page4 .inner .vidList article .con h2 {
+  font: bold 20px/1.2 "Diphylleia";
+  color: black;
+  margin-bottom: 15px;
+  width: 100%;
+}
+#sub_banner .inner #page4 .inner .vidList .pop {
+  width: 39.3vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -3.8vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub_banner .inner #page4 .inner .vidList .pop .btnClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+#sub_banner ul.btn {
+  display: flex;
+}
+#sub_banner ul.btn li {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 40vh;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sub_banner ul.btn li .Angles {
+  display: block;
+  font-size: 60px;
+  color: #fff;
+}
+#sub_banner ul.btn .subPrev {
+  left: 2vw;
+}
+#sub_banner ul.btn .subNext {
+  right: 2vw;
+}
+
+@media screen and (max-width: 290px) {
+  #banner {
+    height: 200px;
+  }
+  #banner .inner .panel #bwBanner {
+    background-color: #efead8;
+  }
+  #banner .inner .panel #bwBanner img {
+    display: none;
+  }
+  #banner .inner .panel #bwBanner p {
+    width: 100%;
+    font: bold 20px/1.5 "IBM Plex Sans KR";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #banner .inner .panel #cyBanner {
+    background-color: #f7e6c4;
+  }
+  #banner .inner .panel #cyBanner img {
+    display: none;
+  }
+  #banner .inner .panel #cyBanner p {
+    width: 100%;
+    font: bold 20px/1.5 "IBM Plex Sans KR";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #banner .inner .panel #jbBanner {
+    background-color: #f1c376;
+  }
+  #banner .inner .panel #jbBanner img {
+    display: none;
+  }
+  #banner .inner .panel #jbBanner p {
+    width: 100%;
+    font: bold 20px/1.5 "IBM Plex Sans KR";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #sub_banner {
+    background-color: #333;
+  }
+  #sub_banner .inner {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: none;
+  }
+  #sub_banner .inner .bar {
+    display: none;
+  }
+  #sub_banner .inner .page {
+    width: 100%;
+  }
+  #sub_banner .inner .page .txt .info {
+    font-size: 5px;
+    right: 2px;
+    bottom: 2px;
+  }
+  #sub_banner .inner #page1 h2 {
+    font-size: 10vw;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2%;
+  }
+  #sub_banner .inner #page1 span {
+    display: block;
+    padding: 0 20%;
+    margin-top: 3%;
+    text-align: center;
+    color: #bbb;
+    font: 1vw/1.2 "Diphylleia";
+  }
+  #sub_banner .inner #page1 .pic {
+    margin-top: 30vw;
+    margin-left: 20vw;
+    width: 50vw;
+  }
+  #sub_banner .inner #page2 span {
+    font-size: 20px;
+  }
+  #sub_banner .inner #page2 .txt {
+    width: 85vw;
+    height: 30vh;
+  }
+  #sub_banner .inner #page2 .txt h2 {
+    font-size: 15px;
+    margin-bottom: 5%;
+  }
+  #sub_banner .inner #page2 .txt p {
+    font-size: 13px;
+  }
+  #sub_banner .inner #page2 .pic {
+    display: none;
+  }
+  #sub_banner .inner #page2 .story {
+    top: 55%;
+    margin-left: 4%;
+  }
+  #sub_banner .inner #page2 .story p {
+    padding: 2%;
+    font: 11px/1.4 "Diphylleia";
+  }
+  #sub_banner .inner #page3 span {
+    font-size: 20px;
+  }
+  #sub_banner .inner #page3 .txt {
+    width: 85vw;
+    height: 30vh;
+  }
+  #sub_banner .inner #page3 .txt h2 {
+    font-size: 15px;
+    margin-bottom: 5%;
+  }
+  #sub_banner .inner #page3 .txt p {
+    font-size: 13px;
+  }
+  #sub_banner .inner #page3 .pic {
+    display: none;
+  }
+  #sub_banner .inner #page3 .story {
+    top: 55%;
+    margin-left: 4%;
+  }
+  #sub_banner .inner #page3 .story p {
+    font: 11px/1.4 "Diphylleia";
+  }
+  #sub_banner .inner #page4 > h2 {
+    font-size: 20px;
+    margin-bottom: 5%;
+  }
+  #sub_banner .inner #page4 .inner .vidList {
+    display: flex;
+    flex-direction: column;
+  }
+  #sub_banner .inner #page4 .inner .vidList article {
+    width: 50vw;
+    border: 1px dashed black;
+    background-color: none;
+    margin-bottom: 1vw;
+  }
+  #sub_banner .inner #page4 .inner .vidList article:last-child {
+    margin-bottom: 0;
+  }
+  #sub_banner .inner #page4 .inner .vidList article .con {
+    display: none;
+  }
+  #sub_banner .inner #page4 .inner .vidList article .pic {
+    height: 30vw;
+    padding: 2px;
+  }
+  #sub_banner .inner #page4 .inner .vidList .pop {
+    width: 100vw;
+  }
+  #sub_banner .inner #page4 .inner .vidList .pop .btnClose {
+    top: 5px;
+  }
+  #sub_banner ul.btn li {
+    width: 55px;
+    height: 55px;
+    top: 80vh;
+  }
+  #sub_banner ul.btn li .Angles {
+    font-size: 40px;
+  }
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #606c5d;
+  transition: 0.5s;
+  overflow: hidden;
+}
+#main.on {
+  opacity: 1;
+}
+#main > .frame {
+  width: 100%;
+  transition: 0.5s;
+}
+#main > .frame article {
+  width: 24vw;
+  height: 70vh;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -20vh;
+  margin-left: -12vw;
+  z-index: 1;
+  transition-property: width, height, transform, opacity, margin-left, margin-top, top, left;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+#main > .frame article .txt {
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(45deg, #606c5d, #333);
+  padding: 20px 20px 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+}
+#main > .frame article .txt strong {
+  font: 1vw/1 "Playfair Display";
+  color: #aaa;
+}
+#main > .frame article .txt p {
+  font: bold 2vw/1.2 "Diphylleia";
+  color: #f1f0e8;
+  position: relative;
+  padding-bottom: 20px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+#main > .frame article .txt h2 {
+  font: 2vw/1 "Playfair Display";
+  color: #eee;
+  position: absolute;
+  top: 75%;
+  left: 2vw;
+  z-index: 2;
+  transition: 0.5s;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+}
+#main > .frame article .txt h2::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 0;
+  background-color: #fff;
+  top: 0;
+  left: -10px;
+  transition: height 1s 0.2s;
+}
+#main > .frame article .txt .desc {
+  width: 75%;
+  visibility: hidden;
+  position: absolute;
+  top: 60%;
+  left: 5vw;
+  font: 13px/1.2 "IBM Plex Sans KR";
+  letter-spacing: 2px;
+  color: #aaa;
+}
+#main > .frame article .pic {
+  width: 100%;
+  height: 60%;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+}
+#main > .frame article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+#main > .frame article .open {
+  width: 0%;
+  height: 60px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#main > .frame article .open span {
+  font: 16px/1 "IBM Plex Sans KR";
+  color: #000;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: 0.5s;
+}
+#main > .frame article .open i {
+  margin-right: -1000px;
+  opacity: 0;
+  color: #555;
+  transition: 0.5s;
+}
+#main > .frame article .close {
+  cursor: pointer;
+  position: absolute;
+  top: 10vh;
+  font: bold 20px/1 "Playfair Display";
+  letter-spacing: 2px;
+  color: #ddd;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#main > .frame article:nth-of-type(1) {
+  transform: translateX(-260%);
+  opacity: 0;
+}
+#main > .frame article:nth-of-type(2) {
+  transform: translateX(-130%);
+  opacity: 0.8;
+}
+#main > .frame article:nth-of-type(3) {
+  transform: translateX(0%);
+  opacity: 1;
+}
+#main > .frame article:nth-of-type(3) .txt h2::before {
+  height: 100%;
+}
+#main > .frame article:nth-of-type(3) .pic img {
+  opacity: 0.8;
+}
+#main > .frame article:nth-of-type(3) .open {
+  width: 100%;
+}
+#main > .frame article:nth-of-type(3) .open span {
+  transform: translateX(50%);
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+#main > .frame article:nth-of-type(3) .open i {
+  margin-right: 20px;
+  opacity: 1;
+  transition: 0.5s 0.8s;
+}
+#main > .frame article:nth-of-type(4) {
+  transform: translateX(130%);
+  opacity: 0.8;
+}
+#main > .frame article:nth-of-type(5) {
+  width: 25vw;
+  transform: translateX(260%);
+  opacity: 0;
+}
+#main > .frame article.on {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition-duration: 0.8s;
+  transition-delay: 0.5s;
+}
+#main > .frame article.on .txt {
+  width: 55%;
+  height: 100%;
+  padding: 5vw;
+  transition: 0.5s 0.5s;
+}
+#main > .frame article.on .txt h2 {
+  opacity: 0;
+}
+#main > .frame article.on .txt .desc {
+  visibility: visible;
+  top: 30%;
+  transition: 1s 1s;
+}
+#main > .frame article.on .pic {
+  width: 45%;
+  height: 100%;
+  transition: 0.5s 0.5s;
+}
+#main > .frame article.on .open {
+  opacity: 0;
+  margin-top: 1000px;
+}
+#main > .frame article.on .close {
+  opacity: 1;
+  right: 5vw;
+  transition: 0.5s 1s;
+  transition-timing-function: cubic-bezier(0.48, -0.67, 0.54, 1.68);
+}
+#main > .frame article.hide {
+  opacity: 0;
+}
+#main nav {
+  position: absolute;
+  display: flex;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 50px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#main nav p {
+  width: 150px;
+  height: 40px;
+  font: bold 30px/40px "Playfair Display";
+  letter-spacing: 8px;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+#main nav p:hover {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+@media screen and (max-width: 290px) {
+  #main {
+    opacity: 1;
+  }
+  #main > .frame article {
+    width: 80vw;
+    margin-left: -40vw;
+  }
+  #main > .frame article .txt strong {
+    font-size: 4vw;
+  }
+  #main > .frame article .txt p {
+    font-size: 4vw;
+    text-align: center;
+  }
+  #main > .frame article .txt h2 {
+    font-size: 7vw;
+    top: 70%;
+    left: 10vw;
+  }
+  #main > .frame article .txt .desc {
+    width: 90%;
+    font-size: 11px;
+    color: #bbb;
+  }
+  #main > .frame article .open {
+    height: 40px;
+  }
+  #main > .frame article .open span {
+    font-size: 12px;
+  }
+  #main > .frame article .close {
+    font-size: 12px;
+  }
+  #main > .frame article:nth-of-type(3) .open {
+    width: 100%;
+  }
+  #main > .frame article.on .txt {
+    width: 100%;
+  }
+  #main > .frame article.on .txt .desc {
+    top: 15%;
+  }
+  #main > .frame article.on .pic {
+    width: 0%;
+  }
+  #main nav {
+    top: 6%;
+    gap: 10px;
+  }
+  #main nav p {
+    width: 120px;
+    font-size: 20px;
+  }
+}
+#news {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  background-color: #aaa;
+  overflow: hidden;
+}
+#news .inner h1 {
+  font: bold 55px/1.2 "Diphylleia";
+  letter-spacing: 4px;
+  text-align: left;
+  position: absolute;
+  top: 70vh;
+  left: 15%;
+  color: #222;
+  opacity: 0;
+  transition: 1s;
+}
+#news .inner h1.on {
+  opacity: 1;
+  top: 20%;
+}
+#news .inner h1 p {
+  margin-top: 30px;
+  text-align: right;
+  font-size: 20px;
+}
+#news .inner .wrap {
+  width: 100%;
+  background-color: #606C5D;
+  position: absolute;
+  bottom: 0vh;
+}
+#news .inner .wrap nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  margin-bottom: -1px;
+}
+#news .inner .wrap nav a {
+  font: 15px/1 "Diphylleia";
+  color: #EFEAD8;
+  position: relative;
+}
+#news .inner .wrap nav a::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  right: 50%;
+  background-color: #222;
+  opacity: 0;
+  transition: 0.5s;
+}
+#news .inner .wrap nav a::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  background-color: #222;
+  opacity: 0;
+  transition: 0.5s;
+}
+#news .inner .wrap nav a.on {
+  color: #F1C376;
+  transition: 0.5s;
+}
+#news .inner .wrap nav a.on::after {
+  right: 110%;
+  opacity: 1;
+}
+#news .inner .wrap nav a.on::before {
+  left: 110%;
+  opacity: 1;
+}
+#news .inner .wrap > div {
+  display: none;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+#news .inner .wrap > div.on {
+  display: block;
+}
+#news .inner .wrap > div article {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#news .inner .wrap > div article .boxInner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#news .inner .wrap > div article .boxInner .pic {
+  width: 30%;
+  margin-left: -9999px;
+  opacity: 0;
+}
+#news .inner .wrap > div article .boxInner .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#news .inner .wrap > div article .boxInner .box {
+  width: 70%;
+  opacity: 0;
+  transform: translateX(9999px);
+}
+#news .inner .wrap > div article .boxInner .box a {
+  display: inline-block;
+  margin: 20px;
+  font: bold 50px/1 "Diphylleia";
+  color: #222;
+  letter-spacing: 2px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+}
+#news .inner .wrap > div article .boxInner .box a:hover {
+  animation-name: vibration;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+#news .inner .wrap > div article .boxInner .box p {
+  width: 100%;
+  padding: 20px;
+  font: bold 28px/1.2 "Diphylleia";
+  color: #222;
+}
+#news .inner .wrap > div article .boxInner .box p span {
+  cursor: pointer;
+}
+#news .inner .wrap > div article .boxInner .box p span:hover {
+  color: #F1C376;
+}
+#news .inner .wrap > div article .boxInner .box > span {
+  display: block;
+  width: 100%;
+  font: bold 25px/1.2 "Diphylleia";
+  color: #333;
+  padding: 20px;
+}
+#news .inner .wrap > div.active article .boxInner {
+  opacity: 1;
+}
+#news .inner .wrap > div.active article .boxInner .pic {
+  margin-left: 0;
+  opacity: 1;
+  transition: 1s;
+}
+#news .inner .wrap > div.active article .boxInner .box {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 0.6s;
+}
+
+@keyframes vibration {
+  0% {
+    transform: rotate(1deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}
+@media screen and (max-width: 290px) {
+  #news {
+    height: 623px;
+  }
+  #news .inner h1 {
+    display: none;
+  }
+  #news .inner .wrap {
+    height: 100%;
+    background-color: #333;
+  }
+  #news .inner .wrap nav a {
+    font-size: 10px;
+  }
+  #news .inner .wrap nav a::after {
+    background-color: #fff;
+  }
+  #news .inner .wrap nav a::before {
+    background-color: #fff;
+  }
+  #news .inner .wrap > div {
+    height: 100%;
+  }
+  #news .inner .wrap > div.on {
+    display: block;
+  }
+  #news .inner .wrap > div article .boxInner {
+    display: block;
+  }
+  #news .inner .wrap > div article .boxInner .pic {
+    margin-top: 2vh;
+    width: 30vw;
+    height: 20vh;
+    border-radius: 50%;
+  }
+  #news .inner .wrap > div article .boxInner .pic img {
+    border-radius: 50%;
+  }
+  #news .inner .wrap > div article .boxInner .box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #news .inner .wrap > div article .boxInner .box a {
+    font-size: 20px;
+    color: #ccc;
+  }
+  #news .inner .wrap > div article .boxInner .box p {
+    font-size: 15px;
+    color: #eee;
+  }
+  #news .inner .wrap > div article .boxInner .box > span {
+    font-size: 12px;
+    color: #999;
+  }
+  #news .inner .wrap > div.active article .boxInner .pic {
+    margin-left: 30vw;
+  }
+  #news .inner .wrap > div.active article .boxInner .box {
+    transition: 0.8s;
+  }
+}
+#footer {
+  width: 100%;
+  height: 300px;
+}
+#footer .inner {
+  width: 100%;
+  height: 100%;
+  background-color: #353b33;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#footer .inner p {
+  color: #e0e3da;
+  text-align: center;
+}
+#footer .inner address {
+  color: #e0e3da;
+  text-align: center;
+}
+
+@media screen and (max-width: 290px) {
+  #footer {
+    height: 100px;
+  }
+  #footer .inner p {
+    font-size: 10px;
+  }
+  #footer .inner address {
+    font-size: 10px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

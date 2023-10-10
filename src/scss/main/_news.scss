@@ -1,0 +1,286 @@
+#news {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    background-color: #aaa;
+    overflow: hidden;
+
+    .inner {
+        h1 {
+            font: bold 55px/1.2 "Diphylleia";
+            letter-spacing: 4px;
+            text-align: left;
+            position: absolute;
+            top: 70vh;
+            left: 15%;
+            color: #222;
+            opacity: 0;
+            transition: 1s;
+
+            &.on{
+                opacity: 1;
+                top: 20%;
+            }
+
+            p {
+                margin-top: 30px;
+                text-align: right;
+                font-size: 20px;
+            }
+        }
+
+        .wrap {
+            width: 100%;
+            background-color: #606C5D;
+            position: absolute;
+            bottom: 0vh;
+
+            nav {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                border-bottom: 1px solid #222;
+                margin-bottom: -1px;
+
+                a {
+                    font: 15px/1 "Diphylleia";
+                    color: #EFEAD8;
+                    position: relative;
+
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 2px;
+                        height: 100%;
+                        right: 50%;
+                        background-color: #222;
+                        opacity: 0;
+                        transition: 0.5s;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 2px;
+                        height: 100%;
+                        left: 50%;
+                        background-color: #222;
+                        opacity: 0;
+                        transition: 0.5s;
+                    }
+
+                    &.on {
+                        color: #F1C376;
+                        transition: 0.5s;
+
+                        &::after {
+                            right: 110%;
+                            opacity: 1;
+                        }
+                        &::before {
+                            left: 110%;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            >div {
+                display: none;
+                width: 100%;
+                height: 400px;
+                position: relative;
+
+                &.on {
+                    display: block;
+                }
+
+                article {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+
+                    .boxInner {
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+
+                        .pic {
+                            width: 30%;
+                            margin-left: -9999px;
+                            opacity: 0;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .box{
+                            width: 70%;
+                            opacity: 0;
+                            transform: translateX(9999px);
+             
+                            a {
+                                display: inline-block;
+                                margin: 20px;
+                                font: bold 50px/1 "Diphylleia";
+                                color: #222;
+                                letter-spacing: 2px;
+                                padding: 15px;
+                                text-align: center;
+                                box-shadow: 0 0 10px rgba(00, 0, 0, 0.5) inset;
+
+                                &:hover{
+                                    animation-name: vibration;
+                                    animation-duration: .5s;
+                                    animation-iteration-count: infinite;
+                                }
+                            }
+                            
+                            p {
+                                width: 100%;
+                                padding: 20px;
+                                font: bold 28px/1.2 "Diphylleia";
+                                color: #222;
+                                span{
+                                    cursor: pointer;
+                                    &:hover{
+                                        color: #F1C376;
+                                    }
+                                }
+                            }
+                            >span {
+                                display: block;
+                                width: 100%;
+                                font: bold 25px/1.2 "Diphylleia";
+                                color: #333;
+                                padding: 20px;
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+                    article {
+                        .boxInner {
+                            opacity: 1;
+                            .pic {
+                                margin-left: 0;
+                                opacity: 1;
+                                transition: 1s;
+                            }
+
+                            .box {
+                                transform: translateX(0);
+                                opacity: 1;
+                                transition: 0.6s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes vibration {
+    0%{
+        transform: rotate(1deg);
+    }
+    30%{
+        transform: rotate(10deg);
+    }
+    70%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
+}
+
+$maxHeight: 623px;
+
+@media screen and (max-width: 290px) {
+    #news {
+        height: $maxHeight;
+        .inner {
+            h1 {
+                display: none;
+            }
+            .wrap {
+                height: 100%;
+                background-color: #333;
+                nav {
+                    a {
+                        font-size: 10px;
+                        &::after {
+                            background-color: #fff;
+                        }
+                        &::before {
+                            background-color: #fff;
+                        }
+                    }
+                }
+                >div {
+                    height: 100%;
+                    &.on {
+                        display: block;
+                    }
+                    article {
+                        .boxInner {
+                            display: block;
+                            .pic {
+                                margin-top: 2vh;
+                                width: 30vw;
+                                height: 20vh;
+                                border-radius: 50%;
+                                img {
+                                    border-radius: 50%;
+                                }
+                            }
+                            .box{
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                a {
+                                    font-size: 20px;
+                                    color: #ccc;
+                                }
+                                
+                                p {
+                                    font-size: 15px;
+                                    color: #eee;
+                                }
+                                >span {
+                                    font-size: 12px;
+                                    color: #999;
+                                }
+                            }
+                        }
+                    }
+    
+                    &.active {
+                        article {
+                            .boxInner {
+                                .pic {
+                                    margin-left: 30vw;
+                                }
+    
+                                .box {
+                                    transition: 0.8s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
