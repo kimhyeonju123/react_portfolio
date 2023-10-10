@@ -6,7 +6,7 @@ function Footer() {
         <section id="footer">
             <div className="inner">
                 <p>
-                    © (경기)근명고등학교 / 앱서비스과
+                    © (경기)근명고등학교 / 앱서비스과 3학년
                 </p>
                 <address>
                     주소 : 경기 시흥시 조남동 1069-12<br/>
