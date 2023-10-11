@@ -4,6 +4,7 @@ import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
 function JB() {
+    const pubURL = process.env.PUBLIC_URL + '/img/';
   return (
     <div>
         <section id="sub_banner">
@@ -12,7 +13,7 @@ function JB() {
 
                 <div className="page" id="page1">
                     <div className="pic">
-                        <img src="img/Julian_Barnes2NoBg.png" alt="줄리언 반스 작가 사진"/>
+                        <img src={pubURL+"Julian_Barnes2NoBg.png"} alt="줄리언 반스 작가 사진"/>
                     </div>
                     <h2>줄리언 반스</h2>
                     <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, dolore?</span>
@@ -20,14 +21,14 @@ function JB() {
                 <div className="page" id="page2">
                     <span>2. 추천 도서-1</span>
                     <div className="pic">
-                        <img src="img/플베앵_원본.jpg" alt="줄리언 반스 플로베르의 앵무새 표지"/>
+                        <img src={pubURL+"플베앵_원본.jpg"} alt="줄리언 반스 플로베르의 앵무새 표지"/>
                     </div>
                     <div className="txt">
                         <h2>「플로베르의 앵무새」</h2>
                         <p>제목 : 플로베르의 앵무새</p>
                         <p>발행일 : 2009/12/04</p>
                         <p>쪽수 : 253쪽</p>
-                        <p>정가 : 11,800원</p>
+                        <p style={{color:'orangered'}}>정가 : 11,800원</p>
                         <p>옮긴이 : 신재실</p>
                         <div className="info">
                             정가는 알라딘 기준
@@ -46,14 +47,14 @@ function JB() {
                 <div className="page" id="page3">
                     <span>2. 추천 도서-2</span>
                     <div className="pic">
-                        <img src="img/예틀않_편집.jpg" alt="줄리언 반스 예감은 틀리지 않는다 표지"/>
+                        <img src={pubURL+"예틀않_편집.jpg"} alt="줄리언 반스 예감은 틀리지 않는다 표지"/>
                     </div>
                     <div className="txt">
                         <h2>「예감은 틀리지 않는다」</h2>
                         <p>제목 : 예감은 틀리지 않는다</p>
                         <p>발행일 : 2012/03/26</p>
                         <p>쪽수 : 268쪽</p>
-                        <p>정가 : 12,800원</p>
+                        <p style={{color:'orangered'}}>정가 : 12,800원</p>
                         <p>옮긴이 : 최세희</p>
                         <div className="info">
                             정가는 알라딘 기준

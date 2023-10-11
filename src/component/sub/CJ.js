@@ -4,6 +4,7 @@ import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
 function CJ() {
+    const pubURL = process.env.PUBLIC_URL + '/img/';
   return (
     <div>
         <section id="sub_banner">
@@ -12,7 +13,7 @@ function CJ() {
 
                 <div className="page" id="page1">
                     <div className="pic">
-                        <img src="img/kcy.png" alt="김초엽 작가의 사진"/>
+                        <img src={pubURL+"kcy.png"} alt="김초엽 작가의 사진"/>
                     </div>
                     <h2>김 초엽</h2>
                     <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, dolore?</span>
@@ -21,14 +22,14 @@ function CJ() {
                 <div className="page" id="page2">
                     <span>2. 추천 도서-1</span>
                     <div className="pic">
-                        <img src="img/우빛속_원본.jpg" alt="김초엽 작가의 우리가 빛의 속도로 갈 수 없다면 표지"/>
+                        <img src={pubURL+"우빛속_원본.jpg"} alt="김초엽 작가의 우리가 빛의 속도로 갈 수 없다면 표지"/>
                     </div>
                     <div className="txt">
                         <h2>「우리가 빛의 속도로 갈 수 없다면」</h2>
                         <p>제목 : 우리가 빛의 속도로 갈 수 없다면</p>
                         <p>발행일 : 2019/06/24</p>
                         <p>쪽수 : 344쪽</p>
-                        <p>정가 : 14,000원</p>
+                        <p style={{color:'orangered'}}>정가 : 14,000원</p>
                         <div className="info">
                             정가는 알라딘 기준
                         </div>
@@ -46,14 +47,14 @@ function CJ() {
                 <div className="page" id="page3">
                     <span>2. 추천 도서-2</span>
                     <div className="pic">
-                        <img src="img/지끝온_편집.jpg" alt="김초엽 지구 끝의 온실 표지"/>
+                        <img src={pubURL+"지끝온_편집.jpg"} alt="김초엽 지구 끝의 온실 표지"/>
                     </div>
                     <div className="txt">
                         <h2>「지구 끝의 온실」</h2>
                         <p>제목 : 지구 끝의 온실</p>
                         <p>발행일 : 2021/08/18</p>
                         <p>쪽수 : 392쪽</p>
-                        <p>정가 : 15,000원</p>
+                        <p style={{color:'orangered'}}>정가 : 15,000원</p>
                         <div className="info">
                             정가는 알라딘 기준
                         </div>

@@ -16,12 +16,8 @@ function Header() {
                 </h1>
                 <nav className="menu">
                     <ul id="gnb">
-                        <li>
-                            <Link to='/BernardWerber'>BernardWerber</Link>
-                        </li>
-                        <li>
-                            <Link to='/KimChoyeop'>KimChoyeop</Link>
-                        </li>
+                        <li><Link to='/BernardWerber'>BernardWerber</Link></li>
+                        <li><Link to='/KimChoyeop'>KimChoyeop</Link></li>
                         <li><Link to='/JulianBarnes'>JulianBarnes</Link></li>
                         <li><Link to='/About'>About</Link></li>
                     </ul>
@@ -31,11 +27,11 @@ function Header() {
                         <a href="index.html">MUSNSORI</a>
                     </h1>
                     <ul id="gnbOn">
-                        <li><a href="BernardWerber.html">BernardWerber</a></li>
-                        <li><a href="KimChoyeop.html">KimChoyeop</a></li>
-                        <li><a href="JulianBarnes.html">JulianBarnes</a></li>
-                        <li><a href="information.html">About</a></li>
-                        <li><a href="index.html">홈으로</a></li>
+                        <li><Link to='/BernardWerber'>BernardWerber</Link></li>
+                        <li><Link to='/KimChoyeop'>KimChoyeop</Link></li>
+                        <li><Link to='/JulianBarnes'>JulianBarnes</Link></li>
+                        <li><Link to='/About'>About</Link></li>
+                        <Link to='/'>홈으로</Link>
                     </ul>
                 </nav>
                 <a href="#" title="위로">
@@ -53,4 +49,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header 

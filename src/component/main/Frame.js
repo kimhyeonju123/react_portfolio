@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 function Frame() {
+    const pubURL = process.env.PUBLIC_URL + '/img/';
+    const articles = [{},{},{},{},{}]
   return (
     <div>
         <section id="main">
@@ -22,17 +24,17 @@ function Frame() {
                             <br/>의도치 않게 사람을 죽이고 경찰에 자수할지 말지 고민하며 초조한 나날을 보내게 된다.<br/>
                             <br/>한편 자신에게 총 111번의 전생이 있었다는 사실을 알고 제1차 세계 대전 참전병 외에도 여러 기억의 문을 열어 본다.
                             <br/><br/>그중에서도 최초의 전생은 놀랍게도 현대인이 『아틀란티스』라고 부르는 전설 속의 섬에 사는 남자 게브였다.<br/>
-                                아틀란티스가 바닷속에 잠겨 버렸다고 알고 있는 르네는 어떻게든 게브를 구하고 싶어 하고,
-                                『판도라의 상자』 무대에서 만났던 최면사 오팔이 르네의 조력자를 자처한다.
-                                    <br/><br/>현생에서는 경찰에 쫓기며 정신병자 취급을 받고, 전생에서는 대홍수가 예고된 가운데 <br/>과연 르네와 게브의 운명은?
+                            아틀란티스가 바닷속에 잠겨 버렸다고 알고 있는 르네는 어떻게든 게브를 구하고 싶어 하고,
+                            『판도라의 상자』 무대에서 만났던 최면사 오팔이 르네의 조력자를 자처한다.
+                            <br/><br/>현생에서는 경찰에 쫓기며 정신병자 취급을 받고, 전생에서는 대홍수가 예고된 가운데 <br/>과연 르네와 게브의 운명은?
                         </div>
                     </div>
                     <div className="pic">
-                        <img src="img/기억_편집.jpg" alt="베르나르 베르베르의 책인 기억 1편 표지"/>
+                        <img src={pubURL + '기억_편집.jpg'} alt={`베르나르 베르베르의 책인 기억 1편 표지`}/>
                     </div>
                     <div className="open">
                         <span>MORE</span>
-                        <i className="fa-solid fa-plus"></i>
+                        <FontAwesomeIcon icon={faPlus} className='faPlus'/>
                     </div>
                     <div className="close">close</div>
                 </article>
@@ -54,7 +56,7 @@ function Frame() {
                         </div>
                     </div>
                     <div className="pic">
-                        <img src="img/심판_원본.jpg" alt="베르나르 베르베르의 책인 심판_의 표지"/>
+                        <img src={pubURL + '심판_원본.jpg'} alt="베르나르 베르베르의 책인 심판_의 표지"/>
                     </div>
                     <div className="open">
                         <span>MORE</span>
@@ -82,7 +84,7 @@ function Frame() {
                         </div>
                     </div>
                     <div className="pic">
-                        <img src="img/지끝온_편집.jpg" alt="김초엽의 책인 지구 끝의 온실_의 표지"/>
+                        <img src={pubURL+ '지끝온_편집.jpg'} alt="김초엽의 책인 지구 끝의 온실_의 표지"/>
                     </div>
                     <div className="open">
                         <span>MORE</span>
@@ -115,7 +117,7 @@ function Frame() {
                         </div>
                     </div>
                     <div className="pic">
-                        <img src="img/우빛속_슬라이드.jpg" alt="김초엽의 책인 우리가 빛의 속도로 갈 수 없다면_의 표지"/>
+                        <img src={pubURL+ '우빛속_슬라이드.jpg'} alt="김초엽의 책인 우리가 빛의 속도로 갈 수 없다면_의 표지"/>
                     </div>
                     <div className="open">
                         <span>MORE</span>
@@ -134,17 +136,17 @@ function Frame() {
                             원서로 150페이지 남짓한 이 길지 않은 소설이 독자를 몰아치는 힘과 서스펜스, 섬세하고 정교한 구성력 때문이다.<br/>
                             또한 평론가와 저널리스트들은 소설적 완성도와 비극적 테마가 주는 무게로 따질 때, <br/>
                             반스의 이 최신작이 비슷한 길이의 노벨라(경장편)인 헨리 제임스의 『나사의 회전』에 필적하는 작품이라고 말한다.<br/>
-                                <br/>불완전하고 믿을 수 없는 1인칭 화자의 시점에 의존하여 인간의 기억과 시점의 왜곡을 탐색하고,<br/>
-                                마침내 진실이 모습을 드러낼 때 묵직한 울림을 전한다는 점에서다.<br/>
-                                <br/>이 작품의 테마인 '왜곡된 기억'은 줄리언 반스가 논픽션인 『두려워할 것은 없다』에서 철학자인
-                                    자신의 형 조너선 반스와의 쉽지 않은 관계에 대해 이야기하면서 다루었던 주제이기도 하다.<br/>
-                                    <br/>역사란 과연 무엇인가라는 교사의 질문에 '에이드리언'이 라그랑주를 인용해<br/>
-                                    <br/>'역사는 부정확한 기억이 불충분한 문서와 만나는 지점에서 빚어지는 확신'<br/>
-                                    <br/>이라고 대답하는 지점에서 작가의 성찰은 시작된다.
+                            <br/>불완전하고 믿을 수 없는 1인칭 화자의 시점에 의존하여 인간의 기억과 시점의 왜곡을 탐색하고,<br/>
+                            마침내 진실이 모습을 드러낼 때 묵직한 울림을 전한다는 점에서다.<br/>
+                            <br/>이 작품의 테마인 '왜곡된 기억'은 줄리언 반스가 논픽션인 『두려워할 것은 없다』에서 철학자인
+                            자신의 형 조너선 반스와의 쉽지 않은 관계에 대해 이야기하면서 다루었던 주제이기도 하다.<br/>
+                            <br/>역사란 과연 무엇인가라는 교사의 질문에 '에이드리언'이 라그랑주를 인용해<br/>
+                            <br/>'역사는 부정확한 기억이 불충분한 문서와 만나는 지점에서 빚어지는 확신'<br/>
+                            <br/>이라고 대답하는 지점에서 작가의 성찰은 시작된다.
                         </div>
                     </div>
                     <div className="pic">
-                        <img src="img/예틀않_편집.jpg" alt="줄리언 반스의 책인 예감은 틀리지 않는다_의 표지"/>
+                        <img src={pubURL+ '예틀않_편집.jpg'} alt="줄리언 반스의 책인 예감은 틀리지 않는다_의 표지"/>
                     </div>
                     <div className="open">
                         <span>MORE</span>

@@ -1,5 +1,4 @@
 import {Route, Switch} from 'react-router-dom';
-import { useMemo, useRef } from 'react';
 
 import './scss/style.scss';
 import Header from "./component/common/Header";
@@ -17,30 +16,18 @@ import About from './component/sub/About';
 
 
 function App() {
-	const uMemo = useMemo(() => {
-		console.log("useMemo")
-		return ["blue", "green", "yellow"];
-	}, []);
-
-	const countRef = useRef(0);
-	function plusRef() {
-		countRef.current = countRef.current + 1;
-		console.log("useRef :", countRef.current);
-		// 렌더링 시켜주면 업데이트도미
-	}
 	return (
 		<>
 			<Switch>
 				<Route exact path='/'>
-					<p>Ref : {countRef.current}</p>
-					<button onClick={plusRef}>Up Ref</button>
 					<Header/>
-					<Banner uMemo={uMemo}/>
+					<Banner/>
 					<Frame/>
 					<News/>
 					<Footer/>
 				</Route>
 
+				{/* 서브페이지 */}
 				<Route path='/BernardWerber'>
 					<Header/>
 					<BN/>

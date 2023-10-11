@@ -4,15 +4,17 @@ import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons'
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
 function BN() {
+    const pubURL = process.env.PUBLIC_URL + '/img/';
+    
   return (
-    <div>
+    <>
         <section id="sub_banner">
         <div className="inner">
             <div className="bar"></div>
 
             <div className="page" id="page1">
                 <div className="pic">
-                    <img src="img/Bernard_Werber1NoBg.png" alt="베르나르 베르베르 작가 사진"/>
+                    <img src={pubURL+'Bernard_Werber1NoBg.png'} alt="베르나르 베르베르 작가 사진"/>
                 </div>
                 <h2>베르나르 베르베르</h2>
                 <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, dolore?</span>
@@ -21,14 +23,14 @@ function BN() {
             <div className="page" id="page2">
                 <span>2. 추천 도서-1</span>
                 <div className="pic">
-                    <img src="img/심판_원본.jpg" alt="베르나르 베르베르 심판 책 표지"/>
+                    <img src={pubURL+'심판_원본.jpg'} alt="베르나르 베르베르 심판 책 표지"/>
                 </div>
                 <div className="txt">
                     <h2>「심판」</h2>
                     <p>제목 : 심판</p>
                     <p>발행일 : 2020/08/30</p>
                     <p>쪽수 : 224쪽</p>
-                    <p>정가 : 14,800원</p>
+                    <p style={{color:'orangered'}}>정가 : 14,800원</p>
                     <p>옮긴이 : 전미연</p>
                     <div className="info">
                         정가는 알라딘 기준
@@ -48,14 +50,14 @@ function BN() {
             <div className="page" id="page3">
                 <span>2. 추천 도서-2</span>
                 <div className="pic">
-                    <img src="img/기억_편집.jpg" alt="베르나르 베르베르 기억 책 표지"/>
+                    <img src={pubURL+"기억_편집.jpg"} alt="베르나르 베르베르 기억 책 표지"/>
                 </div>
                 <div className="txt">
                     <h2>「기억」</h2>
                     <p>제목 : 기억</p>
                     <p>발행일 : 2020/05/30</p>
                     <p>쪽수 : 400쪽</p>
-                    <p>정가 : 16,800원</p>
+                    <p style={{color:'orangered'}}>정가 : 16,800원</p>
                     <p>옮긴이 : 전미연</p>
                     <div className="info">
                         정가는 알라딘 기준
@@ -95,7 +97,7 @@ function BN() {
             </li>
         </ul>
         </section>
-    </div>
+    </>
   )
 }
 

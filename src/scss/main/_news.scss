@@ -44,10 +44,11 @@
                 border-bottom: 1px solid #222;
                 margin-bottom: -1px;
 
-                a {
+                p {
                     font: 15px/1 "Diphylleia";
                     color: #EFEAD8;
                     position: relative;
+                    cursor: pointer;
 
 
                     &::after {
