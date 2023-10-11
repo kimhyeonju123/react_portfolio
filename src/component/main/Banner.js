@@ -10,7 +10,7 @@ function Banner() {
         // 인덱스 번호가 총 0부터 2임 -> 거기서 1을 더하면 -> 0부터 1까지는 +1하고 %3까지해도 어차피 0 1임
         // 하지만 마지막 인덱스 즉 2번 인덱스에서는 +1 = 3 -> 이게 %3으로 된다면 값은 0으로 바뀐다
         // -> 무한 슬라이드
-    };
+    }
     // console.log(Slide) //확인용
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function Banner() {
         // 그리고 setInterval은 찌꺼기들을 남기기 때문에 반드시 클리어를 해줘야 함
         // 그것을 청소해준 것을 휭
         return ()=>{clearInterval(slideInterval)}
-    }, []);
+    }, [])
 
     return (
         <div>
